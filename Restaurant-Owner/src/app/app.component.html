@@ -1,4 +1,4 @@
-<app-log-in></app-log-in>
-<button type="button" pButton label="sss"></button>
-<button pButton type="button" label="Click" ></button>
-<button pButton type="button" label="Click" ></button>
+<app-log-in (menu)='open($event)'>Your Form</app-log-in>
+  
+<app-log-in [error]="'Username or password invalid'" (menu)='open($event)'>Your Form With Error Message</app-log-in>
+`,
