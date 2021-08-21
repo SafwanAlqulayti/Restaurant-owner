@@ -1,6 +1,7 @@
 import { Input, Component, Output, EventEmitter,OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthSercieService } from '../auth-sercie.service';
 
 @Component({
   selector: 'app-log-in',
@@ -8,24 +9,42 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
   constructor(
-    private primengConfig:PrimeNGConfig
-  ) { }
-  submit() {
-  if (this.form.valid) {
-    this.submitEM.emit(this.form.value);
-  }
-}
-@Input()
- error: string | null | undefined;
+    private authService:AuthSercieService
+    ) { }
+  formGroup = new FormGroup({});
+  data:any
 
-@Output() submitEM = new EventEmitter();
+//   submit() {
+//   if (this.form.valid) {
+//     this.submitEM.emit(this.form.value);
+//   }
+// }
+// @Input()
+//  error: string | null | undefined;
+
+// @Output() submitEM = new EventEmitter();
   ngOnInit(): void {
-    this.primengConfig.ripple = true;
+    this.initForm()
   }
+  initForm(){
+    this.formGroup = new FormGroup({
+      email: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required])
+    })
+  }
+  async loginProcess(){
+    if(this.formGroup.valid){
+        (await this.authService.login(this.formGroup.value)).subscribe(async (result:any) => {
+          this.data = result
+         await alert(this.data)
 
+        if(result.success){
+           alert({accessToken:this.data})
+        }else{
+          alert( this.data.message)
+        }
+      })
+    }
+  }
 }

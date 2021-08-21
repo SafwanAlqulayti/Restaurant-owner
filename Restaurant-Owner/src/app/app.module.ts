@@ -1,6 +1,6 @@
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -13,6 +13,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MaterialModule } from './matrial-module';
+import { HttpClientModule } from '@angular/common/http';
+import { MyrestaurantComponent } from './myrestaurant/myrestaurant.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -20,6 +25,7 @@ import { MaterialModule } from './matrial-module';
     AppComponent,
     LogInComponent,
     SignUpComponent,
+    MyrestaurantComponent,
     
     
   ],
@@ -34,7 +40,13 @@ import { MaterialModule } from './matrial-module';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    FormsModule,// read more
+    ReactiveFormsModule,// read more
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
     
   ],
   schemas: [
