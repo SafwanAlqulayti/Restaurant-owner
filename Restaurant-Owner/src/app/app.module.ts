@@ -18,6 +18,8 @@ import { MyrestaurantComponent } from './myrestaurant/myrestaurant.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { OneOrderComponent } from './one-order/one-order.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     LogInComponent,
     SignUpComponent,
     MyrestaurantComponent,
+    OneOrderComponent,
     
     
   ],
@@ -46,8 +49,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ReactiveFormsModule,// read more
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
-    
+    MatPaginatorModule,
+    // RouterModule.forRoot(
+    //   [
+    //     {path:'login', component:LogInComponent},
+    //     {path:'orders', component:MyrestaurantComponent},
+    //     {path:'order/:orderId', component:OneOrderComponent}
+    //   ]
+    // )   
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

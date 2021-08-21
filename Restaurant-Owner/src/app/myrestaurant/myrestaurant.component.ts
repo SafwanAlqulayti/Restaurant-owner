@@ -33,7 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class MyrestaurantComponent implements OnInit ,AfterViewInit {
  orders:any
- displayedColumns: string[] = ['orderNumber', 'id', 'price', 'status','changeStatus'];
+ displayedColumns: string[] = ['orderNumber', 'price', 'status','changeStatus'];
  dataSource: any
   constructor(
     private readonly restaurantService:RestaurantServiceService,

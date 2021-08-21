@@ -15,10 +15,10 @@
       </ng-container>
     
       <!-- id Column -->
-      <ng-container matColumnDef="id">
+      <!-- <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container>
+        <td mat-cell *matCellDef="let element">  </td>
+      </ng-container> -->
     
       <!-- price Column -->
       <ng-container matColumnDef="price">
@@ -35,9 +35,13 @@
       <ng-container matColumnDef="changeStatus">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> changeStatus </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-button color="primary" (click)="accept()">accept</button>
+          <!-- <button mat-button color="primary" (click)="accept()">accept</button>
           <button mat-raised-button color="accent" (click)="wait()">hold</button>
-          <button mat-button color="warn" (click)="reject('s')">reject</button>
+          <button mat-button color="warn" (click)="reject('s')">reject</button> -->
+          <input type="hidden" id="Id" name="custId" value={{element.Id}}>
+
+          <a [routerLink]="['/order' , element.id]" href="">Read More</a>
+
 
           {{element.changeStatus}} </td>
       </ng-container>
