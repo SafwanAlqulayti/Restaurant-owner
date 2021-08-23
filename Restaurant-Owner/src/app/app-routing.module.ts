@@ -5,7 +5,7 @@ import { MyrestaurantComponent } from "./myrestaurant/myrestaurant.component";
 import { OneOrderComponent } from "./one-order/one-order.component";
 
 const routes:Routes = [
-    {path:'login', component:LogInComponent ,pathMatch: "full"},
+    {path:'login', component:LogInComponent},
     {path:'orders', component:MyrestaurantComponent},
     {path:'order/:orderId', component:OneOrderComponent}
    // {path:'**', component:notFoun}//not found

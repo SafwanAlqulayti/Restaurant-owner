@@ -56,7 +56,7 @@ import { RouterModule } from '@angular/router';
     //     {path:'orders', component:MyrestaurantComponent},
     //     {path:'order/:orderId', component:OneOrderComponent}
     //   ]
-    // )   
+    //)   
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
